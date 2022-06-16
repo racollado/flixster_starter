@@ -10,6 +10,8 @@ const moreButtonElement = document.querySelector("#more-button");
 const searchElement = document.querySelector("#current-query")
 const clearElement = document.querySelector("#clear")
 const moviesDiv = document.getElementById("movies");
+const posters = document.querySelector(".image")
+const titles = document.querySelector(".title");
 
 // MOVIE FETCHING FUNCTIONS
 
@@ -54,7 +56,9 @@ function renderMovieCard(div, movieObj) {
         `<h2 class="no-image" style="color: red">[No Image Found]</h2>` : 
         `<img class="movie-poster-image" src=` + baseImgURL + movieObj.poster_path + ` alt="movie poster image" />`}
     </div>
-    <h2>Title: ${movieObj.title}</h2>
+    <br>
+    <h2 class="title">Title: ${movieObj.title}</h2>
+    <br>
     <h3>Votes: ${movieObj.vote_average}</h3>
     </div>
     `
@@ -112,6 +116,11 @@ function attachEventListeners() {
         for (const index in movieData.results) {
             renderMovieCard(moviesDiv, movieData.results[index]);
         }});
+
+    // click movie or title to open pop-up
+    posters.addEventListener('click', () => {console.log('hey')})
+
+    titles.addEventListener('click', () => {console.log('bitch')})
 }
 
 // WINDOW ONLOAD CALLS
