@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Netfilms</h1>
+    <h1 id="header">Netfilms</h1>
     <div id="form">
         <label for="current-query">Search for a movie:</label>
         <input type="text" id="current-query" name="current-query">
@@ -26,6 +26,17 @@
     <br><br>
     <div id="more">
         <button id="more-button">Load more movies</button>
+    </div>
+    <div id="dim">
+        <h1 id="x" onclick="closeDim()">&times</h1>
+        <div id="content">
+            <h2 id="dim-title"></h2>
+            <h3 id="dim-tagline"></h3>
+            <br>
+            <iframe id="dim-video" class="dim-screen" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <br>
+            <h4 id="dim-overview"></h4>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
