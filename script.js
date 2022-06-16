@@ -48,6 +48,7 @@ function getMovies() {
 
 function renderMovieCard(div, movieObj) {
     div.innerHTML += `
+    <div class="movie-card item">
     <div class="image">
     ${movieObj.poster_path === null ? 
         `<h2 class="no-image" style="color: red">[No Image Found]</h2>` : 
@@ -55,6 +56,7 @@ function renderMovieCard(div, movieObj) {
     </div>
     <h2>Title: ${movieObj.title}</h2>
     <h3>Votes: ${movieObj.vote_average}</h3>
+    </div>
     `
 }
 
