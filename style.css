@@ -95,21 +95,27 @@
       outline: #333333;
       color: #222222;
       height: 50px;
-      width: 500px;
+      width: 23%;
       padding: auto;
-      align-self: center;
       text-align: center;
+      font-size: x-large;
+      min-width: 100px;
+      position: relative; 
+      left: 50%; 
+      margin-left: -15%;
   }
 
   #form {
-    margin: auto;
-    width: 60%;
+    display: flexbox;
+    height: 120px;
     padding: 10px;
+    margin: auto;
   }
 
   #search {
     float: left;
     margin: auto;
+    width: 90%
   }
   
   textarea:focus, input:focus {
@@ -144,16 +150,26 @@
 
   img {
     border: 5px solid rgb(232, 232, 232);
+    width: auto;
   }
 
   #clear {
-    width: 100px;
-    float: left;
+    width: 120px;
+    min-width: 70px;
+    margin-top: 20px;
+    font-size: x-large;
+    position: relative; 
+    left: 50%; 
+    margin-left: 0px
+  }
+
+  div {
+    border: 5px solid rgb(232, 232, 232);
   }
 
   #more {
+    width: fit-content;
     margin: auto;
-    width: 15%;
     padding: 10px;
   }
 
@@ -163,6 +179,23 @@
 
   .movie-card {
     border: 5px solid rgb(232, 232, 232);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #032a49;
+    padding: 10px;
+    width: 100%
+  }
+
+  .item {
+    display: flexbox;
+    background-color: rgba(64, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
   }
 
   button:hover {
@@ -255,7 +288,12 @@
 
   label {
     color:#d9d9d9;
-    font-size: xx-large;
+    font-size: x-large;
+    margin-top: 25px;
+    margin-right: 10px;
+    position: relative; 
+    left: 35%; 
+    margin-left: -160px
   }
   
   .input100 {
