@@ -120,11 +120,11 @@
     width: auto;
   }
 
-  .title:hover {
+  .movie-title:hover {
     cursor: pointer;
   }
 
-  #clear {
+  #close-search-btn {
     width: 120px;
     min-width: 70px;
     margin-top: 20px;
@@ -140,7 +140,7 @@
     padding: 10px;
   }
 
-  #more-button {
+  #load-more-movies-btn {
     width: 200px;
   }
 

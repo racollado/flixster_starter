@@ -7,10 +7,10 @@ var currentPage = 1;
 
 // HTML QUERY SELECTORS AND GET ELEMENT CALLS
 
-const moreButtonElement = document.querySelector("#more-button");
-const searchElement = document.querySelector("#current-query");
-const clearElement = document.querySelector("#clear");
-const moviesDiv = document.getElementById("movies");
+const moreButtonElement = document.querySelector("#load-more-movies-btn");
+const searchElement = document.querySelector("#search-input");
+const clearElement = document.querySelector("#close-search-btn");
+const moviesDiv = document.getElementById("movies-grid");
 const dimScreen = document.getElementById("dim");
 const dimX = document.getElementById("x");
 const dimContent = document.getElementById("content");
@@ -71,13 +71,13 @@ function renderMovieCard(div, movieObj) {
     <div class="movie-card item">
     <div class="image" onclick="movieClicked('${movieObj.id}')">
     ${movieObj.poster_path === null ? 
-        `<h2 class="no-image" style="color: red">[No Image Found]</h2>` : 
-        `<img class="movie-poster-image" src=` + baseImgURL + movieObj.poster_path + ` alt="movie poster image" />`}
+        `<h2 class="movie-poster no-image" style="color: red">[No Image Found]</h2>` : 
+        `<img class="movie-poster" src=` + baseImgURL + movieObj.poster_path + ` alt="movie poster image" />`}
     </div>
     <br>
-    <h2 class="title" onclick="movieClicked('${movieObj.id}')">Title: ${movieObj.title}</h2>
+    <h2 class="movie-title" onclick="movieClicked('${movieObj.id}')">Title: ${movieObj.title}</h2>
     <br>
-    <h3>Votes: ${movieObj.vote_average}</h3>
+    <h3 class="movie-votes">Votes: ${movieObj.vote_average}</h3>
     </div>
     `;
 }
@@ -161,11 +161,21 @@ function attachEventListeners() {
         }});
 
     // escape key will close pop-up
-    document.addEventListener('keydown', function(event){
-        if(event.key === "Escape"){
+    document.addEventListener('keydown', async function(event) {
+        if (event.key === "Escape") {
             closeDim();
+        } 
+        else if (event.key === "Enter") {
+            updateCurrentQuery();
+            resetCurrentPage();
+            clearMovies(moviesDiv);
+            console.log('hey gurl')
+            const movieData = await getMovies();
+            for (const index in movieData.results) {
+                renderMovieCard(moviesDiv, movieData.results[index]);
+            }
         }
-    });
+    })
 }
 
 // WINDOW ONLOAD CALLS
