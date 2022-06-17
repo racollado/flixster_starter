@@ -34,9 +34,9 @@ Deployed Application (optional): [Flixster Deployed Site](https://racollado.gith
 
 - [X] Deploy website using GitHub Pages. (not currently functional?)
 - [X] Allow user to view more details about a movie within a popup.
-- [ ] Improve the user experience through CSS & animation.
+- [X] Improve the user experience through CSS & animation. (loading animation and background dim animation)
 - [X] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
-- [ ] Implement anything else that you can get done to improve the app functionality!
+- [X] Implement anything else that you can get done to improve the app functionality! -> Automatic search refreshes (no need to press Enter, though that functionality is implemented.) Escape key closes dimmed pop-up. Video dropdown selection. Clicking outside the dimmed content closes pop-up.
 
 ### Walkthrough Video
 

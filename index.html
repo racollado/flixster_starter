@@ -20,7 +20,10 @@
         <input type="text" id="search-input" name="search-input">
         <button id="close-search-btn">Clear</button>
     </div>
+    <br>
+    <h1 id="now-playing">Movies Now Playing:</h1>
     <br><br>
+    <div id="loader" class="hidden"></div>
     <div id="movies-grid" class="grid">
     </div>
     <br><br>
@@ -32,6 +35,7 @@
         <div id="content">
             <h2 id="dim-title"></h2>
             <h3 id="dim-tagline"></h3>
+            <select id="video-select">Video 1</select>
             <br>
             <iframe title="movie trailer" id="dim-video" class="dim-screen" allowfullscreen></iframe>
             <br>
