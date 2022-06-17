@@ -159,7 +159,7 @@
   .image {
     width: 250px;
     display: flex;
-    color: white;
+    color: rgb(255, 246, 246);
   }
 
   img {
