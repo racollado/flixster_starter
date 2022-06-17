@@ -41,7 +41,7 @@ Extra functionality: Search refreshes automatically (no need to press Enter, tho
 
 ### Walkthrough Video
 
-
+https://user-images.githubusercontent.com/73001297/174406314-9a022845-ca0f-45c3-bdfd-5f6175169b57.mp4
 
 ### Reflection
 
