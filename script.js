@@ -1,8 +1,9 @@
 // GLOBAL VARIABLES
 
-const baseImgURL = "https://www.themoviedb.org/t/p/w440_and_h660_face/"
-var currentQuery = ""
-var currentPage = 1
+const baseImgURL = "https://www.themoviedb.org/t/p/w440_and_h660_face/";
+const baseVidURL = "https://www.youtube.com/embed/";
+var currentQuery = "";
+var currentPage = 1;
 
 // HTML QUERY SELECTORS AND GET ELEMENT CALLS
 
@@ -54,12 +55,8 @@ function getMovies() {
 
 async function getMovieInfo(movieID) {
     try { 
-        let results = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=804e54f236cc43faf2e40adb1019cf62&language=en-US`);
+        let results = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=804e54f236cc43faf2e40adb1019cf62&language=en-US&append_to_response=videos`);
         let data = await results.json();
-        if (data.video) {
-           results = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=804e54f236cc43faf2e40adb1019cf62&language=en-US`);
-           data += await results.json();
-        }
         console.log(data);
         return data;
     } catch(err) {
@@ -82,7 +79,7 @@ function renderMovieCard(div, movieObj) {
     <br>
     <h3>Votes: ${movieObj.vote_average}</h3>
     </div>
-    `
+    `;
 }
 
 // PAGE STATUS UPDATE FUNCTIONS
@@ -114,6 +111,14 @@ async function openDim(movieID) {
     data = await getMovieInfo(movieID);
     dimTitle.innerHTML = `${data.title} (${data.release_date.substring(0,4)})`;
     dimTag.innerHTML = data.tagline;
+    const vids = data.videos.results;
+    if (vids.length !== 0) {
+        dimVid.src = baseVidURL + vids[0].key;
+        
+    }
+    else {
+        dimVid.src = "";
+    }
     dimOver.innerHTML = data.overview;
     dimElements.forEach(el => {el.classList.add("dim-screen");});
 }
@@ -154,6 +159,13 @@ function attachEventListeners() {
         for (const index in movieData.results) {
             renderMovieCard(moviesDiv, movieData.results[index]);
         }});
+
+    // escape key will close pop-up
+    document.addEventListener('keydown', function(event){
+        if(event.key === "Escape"){
+            closeDim();
+        }
+    });
 }
 
 // WINDOW ONLOAD CALLS

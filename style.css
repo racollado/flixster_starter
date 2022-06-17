@@ -40,7 +40,7 @@
   #header {
     font-size: 100px;
     text-align: center;
-    color: #c80000;
+    color: #ff3737;
   }
   
   p {
@@ -157,14 +157,13 @@
   }
 
   .image {
-    min-width: 100px;
-    max-width: 250px;
+    width: 250px;
     display: flex;
+    color: white;
   }
 
   img {
-    min-width: 100px;
-    max-width: 250px;
+    width: 250px;
     display: flex;
   }
 
@@ -242,8 +241,6 @@
     padding:10px;
     top: 12.5%;
     left: 12.5%;
-    margin:auto;
-
     width: 75%;
     height: fit-content;
     max-height: 75%;
@@ -287,9 +284,10 @@
   #dim-video.dim-screen {
     width: 100%;
     max-width: 1080px;
-    min-height: 400px;
+    min-height: 480px;
     height: auto;
     display: block;
+    margin:auto;
   }
 
   
