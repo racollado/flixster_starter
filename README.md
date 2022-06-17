@@ -51,7 +51,7 @@ Fetching info through the API was very easy because of Lab 3. I also thought the
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-One thing I wanted to implement (but doesn't work on Chrome yet) is grid resizing animations. I would also test the website on mobile. Finally, I wish I could implement an infinite scroll (automatically load more movies when user arrives to the bottom of the page), but it would go against the specs of the project. Otherwise, I was able to implement most of the features I sought to achieve!
+One thing I wanted to implement (but doesn't work on Chrome yet) is grid resizing animations. I would also test the website on mobile. A case I don't really cover is shrinking the pop-up window when there are no videos found for a movie. Finally, I wish I could implement an infinite scroll (automatically load more movies when user arrives to the bottom of the page), but it would go against the specs of the project. Otherwise, I was able to implement most of the features I sought to achieve!
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
