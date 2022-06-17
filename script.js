@@ -225,11 +225,12 @@ function attachEventListeners() {
     });
 
     // video selection dropdown refreshes video
-    beginLoading();
     dimSelect.addEventListener('change', () => {
+        beginLoading();
         dimVid.src = baseVidURL + dimSelect.value;
+        endLoading();
     });
-    endLoading();
+    
 }
 
 // WINDOW ONLOAD CALLS
